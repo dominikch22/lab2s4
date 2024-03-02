@@ -43,7 +43,7 @@
             // 
             // nameInput
             // 
-            this.nameInput.Location = new System.Drawing.Point(219, 71);
+            this.nameInput.Location = new System.Drawing.Point(220, 45);
             this.nameInput.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(148, 26);
@@ -51,7 +51,7 @@
             // 
             // surnameInput
             // 
-            this.surnameInput.Location = new System.Drawing.Point(219, 111);
+            this.surnameInput.Location = new System.Drawing.Point(220, 76);
             this.surnameInput.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.surnameInput.Name = "surnameInput";
             this.surnameInput.Size = new System.Drawing.Size(148, 26);
@@ -59,7 +59,7 @@
             // 
             // birthDateInput
             // 
-            this.birthDateInput.Location = new System.Drawing.Point(219, 151);
+            this.birthDateInput.Location = new System.Drawing.Point(220, 108);
             this.birthDateInput.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.birthDateInput.Name = "birthDateInput";
             this.birthDateInput.Size = new System.Drawing.Size(148, 26);
@@ -67,7 +67,7 @@
             // 
             // cityInput
             // 
-            this.cityInput.Location = new System.Drawing.Point(219, 191);
+            this.cityInput.Location = new System.Drawing.Point(220, 138);
             this.cityInput.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cityInput.Name = "cityInput";
             this.cityInput.Size = new System.Drawing.Size(148, 26);
@@ -75,7 +75,7 @@
             // 
             // AddPersonButton
             // 
-            this.AddPersonButton.Location = new System.Drawing.Point(256, 272);
+            this.AddPersonButton.Location = new System.Drawing.Point(255, 209);
             this.AddPersonButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AddPersonButton.Name = "AddPersonButton";
             this.AddPersonButton.Size = new System.Drawing.Size(112, 35);
@@ -87,7 +87,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 234);
+            this.label4.Location = new System.Drawing.Point(13, 141);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 20);
@@ -97,7 +97,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(66, 172);
+            this.label3.Location = new System.Drawing.Point(13, 111);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 20);
@@ -107,7 +107,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 111);
+            this.label2.Location = new System.Drawing.Point(13, 79);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 20);
@@ -117,7 +117,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 55);
+            this.label1.Location = new System.Drawing.Point(13, 48);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 20);
@@ -126,7 +126,7 @@
             // 
             // closeWindowButton
             // 
-            this.closeWindowButton.Location = new System.Drawing.Point(58, 272);
+            this.closeWindowButton.Location = new System.Drawing.Point(13, 209);
             this.closeWindowButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.closeWindowButton.Name = "closeWindowButton";
             this.closeWindowButton.Size = new System.Drawing.Size(112, 35);
@@ -138,17 +138,16 @@
             // error
             // 
             this.error.AutoSize = true;
-            this.error.Location = new System.Drawing.Point(82, 316);
+            this.error.Location = new System.Drawing.Point(13, 173);
             this.error.Name = "error";
-            this.error.Size = new System.Drawing.Size(18, 20);
+            this.error.Size = new System.Drawing.Size(0, 20);
             this.error.TabIndex = 15;
-            this.error.Text = "e";
             // 
-            // AddPersonWindow
+            // PersonOperationWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 383);
+            this.ClientSize = new System.Drawing.Size(421, 268);
             this.Controls.Add(this.error);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -161,7 +160,7 @@
             this.Controls.Add(this.surnameInput);
             this.Controls.Add(this.nameInput);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "AddPersonWindow";
+            this.Name = "PersonOperationWindow";
             this.Text = "AddPersonWindow";
             this.ResumeLayout(false);
             this.PerformLayout();

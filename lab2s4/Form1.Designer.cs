@@ -69,7 +69,7 @@
             // 
             // editPersonButton
             // 
-            this.editPersonButton.Location = new System.Drawing.Point(273, 554);
+            this.editPersonButton.Location = new System.Drawing.Point(238, 554);
             this.editPersonButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.editPersonButton.Name = "editPersonButton";
             this.editPersonButton.Size = new System.Drawing.Size(112, 35);
@@ -82,7 +82,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(628, 610);
             this.Controls.Add(this.editPersonButton);
             this.Controls.Add(this.AddOnePersonButton);
             this.Controls.Add(this.addPersonButton);
