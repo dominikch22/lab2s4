@@ -1,0 +1,76 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace lab2s4
+{
+    public partial class PersonOperationWindow : Form
+    {
+        public event EventHandler<Person> PersonOperation;
+        private Person Person;
+        public PersonOperationWindow(Person person, EventHandler<Person> personOperation)
+        {
+            InitializeComponent();
+
+            PersonOperation = personOperation;
+            Person = (Person)person.Clone();
+
+            nameInput.Text = person.Name;
+            surnameInput.Text = person.Surname;
+            birthDateInput.Text = $"{person.BirthDate.Day}-{person.BirthDate.Month}-{person.BirthDate.Year}";
+            cityInput.Text = person.City;
+
+            this.Text = "Edytowanie osoby";
+            AddPersonButton.Text = "Edytuj";
+        }
+        public PersonOperationWindow(EventHandler<Person> personOperation) {
+            InitializeComponent();
+
+            this.Text = "Dodawanie osoby";
+            AddPersonButton.Text = "Dodaj";
+
+            PersonOperation = personOperation;
+            Person = new Person();
+
+
+        }
+      
+        private void AddPersonButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                error.Text = "";
+                Person.Name = nameInput.Text;
+                Person.Surname = surnameInput.Text;
+                Person.BirthDate = DateTime.Parse(birthDateInput.Text);
+                Person.City = cityInput.Text;
+
+                PersonOperation?.Invoke(this, Person);
+                CloseWindow();
+
+            }
+            catch (Exception ex)
+            {
+                error.Text = ex.Message;
+            }
+
+        }
+
+        private void CloseWindow()
+        {
+            this.Close();
+        }
+
+        private void closeWindowButton_Click(object sender, EventArgs e)
+        {
+            CloseWindow();
+        }
+    }
+
+}
