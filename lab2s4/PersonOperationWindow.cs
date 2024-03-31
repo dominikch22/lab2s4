@@ -13,12 +13,11 @@ namespace lab2s4
     public partial class PersonOperationWindow : Form
     {
         public event EventHandler<Person> PersonOperation;
-        private Person Person;
-        public PersonOperationWindow(Person person, EventHandler<Person> personOperation)
+        public Person Person;
+        public PersonOperationWindow(Person person)
         {
             InitializeComponent();
 
-            PersonOperation = personOperation;
             Person = (Person)person.Clone();
 
             nameInput.Text = person.Name;
@@ -29,13 +28,12 @@ namespace lab2s4
             this.Text = "Edytowanie osoby";
             AddPersonButton.Text = "Edytuj";
         }
-        public PersonOperationWindow(EventHandler<Person> personOperation) {
+        public PersonOperationWindow() {
             InitializeComponent();
 
             this.Text = "Dodawanie osoby";
             AddPersonButton.Text = "Dodaj";
 
-            PersonOperation = personOperation;
             Person = new Person();
 
 
@@ -51,8 +49,7 @@ namespace lab2s4
                 Person.BirthDate = DateTime.Parse(birthDateInput.Text);
                 Person.City = cityInput.Text;
 
-                PersonOperation?.Invoke(this, Person);
-                CloseWindow();
+                FinishWindow();
 
             }
             catch (Exception ex)
@@ -62,14 +59,19 @@ namespace lab2s4
 
         }
 
-        private void CloseWindow()
+        private void FinishWindow()
         {
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
+        private void CancelWindow() {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
         private void closeWindowButton_Click(object sender, EventArgs e)
         {
-            CloseWindow();
+            CancelWindow();
         }
     }
 

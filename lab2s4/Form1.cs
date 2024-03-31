@@ -41,7 +41,7 @@ namespace lab2s4
             }
         }
 
-        public void EditPerson(object sender, Person person) {
+        public void EditPerson(Person person) {
             Person editedPerson;
             Persons.TryGetValue(person.Id, out editedPerson);
 
@@ -64,10 +64,15 @@ namespace lab2s4
 
         private void AddOnePersonButton_Click(object sender, EventArgs e)
         {
-            PersonOperationWindow addPersonWindow = new PersonOperationWindow(AddPerson);
-            //addPersonWindow.PersonOperation += AddPersonToList;
+            PersonOperationWindow addPersonWindow = new PersonOperationWindow();
+            DialogResult result = addPersonWindow.ShowDialog();
 
-            addPersonWindow.ShowDialog();
+            if (result == DialogResult.OK) {
+                Persons.Add(addPersonWindow.Person.Id, addPersonWindow.Person);
+                ShowPersons();
+
+            }
+
 
         }
 
@@ -75,9 +80,14 @@ namespace lab2s4
         {
             if (SelectedPerson == null)
                 return;
-            PersonOperationWindow addPersonWindow = new PersonOperationWindow(SelectedPerson, EditPerson);
+            PersonOperationWindow editPersonWindow = new PersonOperationWindow(SelectedPerson);
+            DialogResult result = editPersonWindow.ShowDialog();
 
-            addPersonWindow.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                EditPerson(editPersonWindow.Person);
+            }
+
 
         }
 
